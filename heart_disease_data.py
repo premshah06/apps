@@ -94,7 +94,7 @@ def heart_disease_data():
     #create_info_box(criteria_info.get('Thalassemia', ''))
 
     # Prepare the data for prediction
-    input_data = np.array([age, gender, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]).reshape(1, -1)
+    input_data = np.array([age, gender == 'female', cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]).reshape(1, -1).astype(float)
 
     # Load or create the model
     model = LogisticRegression()
