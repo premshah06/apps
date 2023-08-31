@@ -24,14 +24,14 @@ def main():
          style={"border": "2px solid #000", 
                 "border-radius": "10px",
                 "box-shadow": "0px 5px 10px rgba(0, 0, 0, 0.2)"})
-        st.markdown("""
+    st.markdown("""
     <div style="text-align: center;">
         <h2>Welcome to our Diabetes and Heart Prediction Website!</h2>
         <p>In today's world, the prevalence of these conditions has risen significantly, leading to unfortunate outcomes for many individuals. Our mission is to tackle this challenge head-on by empowering you with knowledge about your health.</p>
     </div>
     """, unsafe_allow_html=True)
 
-st.markdown("""
+    st.markdown("""
     <div style="text-align: center;">
         <p>We understand that these diseases can be concerning, but worry not. Our user-friendly platform is designed to provide you with a reliable prediction of your health status based on the symptoms you might be experiencing.</p>
         <p>Instead of wondering and waiting, you can now take a proactive step towards your well-being from the comfort of your home.</p>
