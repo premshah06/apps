@@ -32,7 +32,6 @@ def main():
         st.title("Welcome to our Diabetes and Heart Prediction Website!")
         st.markdown("""
         <div style="text-align: center;">
-            <div style="max-width: 20%; float:right; border: 2px solid #000; border-radius: 10px; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);">
                 <img src="https://img.freepik.com/premium-vector/vector-illustration-flat-colored-icons-with-long-shadows-abstract-medicine-background-with-medical-health-healthcare-doctor-pills-cross-symbols-design-elements-mobile-web-applications_724904-812.jpg?w=2000" alt="Attractive Image" style="max-width: 20%; border-radius: 10px;">
             </div>
         </div>
