@@ -13,7 +13,7 @@ st.set_page_config(
 
 def main():
     with st.sidebar:
-        selected = option_menu("Main Menu", ["Home", "Diabetes",'Heart Disease'],
+        selected = option_menu("Main Menu", ["Home",'Heart Disease'],
             icons=['house', "file-earmark-medical",'activity'], menu_icon="heart", default_index=0)
 
     if selected == "Home":
@@ -59,8 +59,8 @@ def main():
     """, unsafe_allow_html=True)
 
         
-    elif selected == "Diabetes":
-        diabetes_predict()
+    #elif selected == "Diabetes":
+    #   diabetes_predict()
     elif selected == "Heart Disease":
         heart_disease_data()
 
