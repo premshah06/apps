@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 
-# Set up Streamlit page configuration
-st.set_page_config(page_title="Heart Failure Prediction and Information")
+
 
 # Load the dataset
 heart_data = pd.read_csv("heart_failure_clinical_records_dataset.csv")
