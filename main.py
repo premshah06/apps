@@ -21,7 +21,7 @@ def main():
         st.markdown("""
         <style>
             body {
-                background-image: url('heart.jpg');
+                background-image: url('https://img.freepik.com/premium-vector/vector-illustration-flat-colored-icons-with-long-shadows-abstract-medicine-background-with-medical-health-healthcare-doctor-pills-cross-symbols-design-elements-mobile-web-applications_724904-812.jpg?w=2000');
                 background-size: cover;
                 background-position: center;
                 height: 100vh;
