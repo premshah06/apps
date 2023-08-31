@@ -18,12 +18,12 @@ def main():
 
     if selected == "Home":
         st.title("Diabetes and Heart Detection Website")
-        st.image("heart.jpg", 
-         use_column_width=True,
-         caption="Image by John Doe",
-         style={"border": "2px solid #000", 
-                "border-radius": "10px",
-                "box-shadow": "0px 5px 10px rgba(0, 0, 0, 0.2)"})
+        st.markdown("""
+    <div style="text-align: center;">
+        <img src="heart.jpg" alt="Attractive Image" style="max-width: 100%; border: 2px solid #000; border-radius: 10px; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);">
+        <p style="font-style: italic; color: #777;">Image by John Doe</p>
+    </div>
+    """, unsafe_allow_html=True)
         st.markdown("""
     <div style="text-align: center;">
         <h2>Welcome to our Diabetes and Heart Prediction Website!</h2>
