@@ -24,11 +24,13 @@ def main():
     
     if selected == "Home":
         st.title("Diabetes and Heart detection website")
-        st.write("""This is a diabetes and heart prediction website! This both disease are nowadays very common to people as number of people are having these disease and many people are dying due to this disease
-                    So to prevent people from dying they should know whether they are having this disease or not?
-                    When they feel like having some symtomps realted to this disease they can visit our website and predict the disease 
-                    without even going to doctor and this model is very accurate.
-                    We wanted to take care of the people so we made a good prediction model for this disease to save the life of the people""")
+        st.write("""Welcome to our Diabetes and Heart Disease Prediction Website! In today's world, the prevalence of these conditions has risen significantly, leading to unfortunate outcomes for many individuals. Our mission is to tackle this challenge head-on by empowering you with knowledge about your health.
+
+We understand that these diseases can be concerning, but worry not. Our user-friendly platform is designed to provide you with a reliable prediction of your health status based on the symptoms you might be experiencing. Instead of wondering and waiting, you can now take a proactive step towards your well-being from the comfort of your home.
+
+Our cutting-edge prediction model has been meticulously developed to ensure accuracy. By inputting your symptoms into our interactive system, you'll receive a personalized assessment of your condition's likelihood. This doesn't replace professional medical advice, but it does serve as a valuable tool to help you make informed decisions about your health.
+
+Your health matters, and we're here to assist you on your journey to a healthier life. Together, let's empower ourselves with knowledge, take charge of our well-being, and work towards a future where preventable diseases no longer claim lives. Start your prediction now and take a step towards a healthier future!""")
         # diabetes_dataset = pd.read_csv("./diabetes-dataset-cleaned.csv")
         # diabetes_dataset = diabetes_dataset.drop(columns = 'Pdiabetes', axis=1)
         # diabetes_dataset=diabetes_dataset.dropna(axis=0)
