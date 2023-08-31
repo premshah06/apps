@@ -1,13 +1,12 @@
 import streamlit as st
 import pandas as pd
-import matplotlib as plt
 import seaborn as sns
 
 # Set up Streamlit page configuration
 st.set_page_config(page_title="Heart Failure Prediction and Information")
 
 # Load the dataset
-heart_data = pd.read_csv("heart.csv")
+heart_data = pd.read_csv("heart_failure_clinical_records_dataset.csv")
 
 # Display basic information about the dataset
 st.title("Heart Failure Prediction and Information")
@@ -22,12 +21,8 @@ st.dataframe(heart_data.head())
 
 # Visualize the distribution of heart failure cases
 st.subheader("Heart Failure Cases Distribution")
-plt.figure(figsize=(8, 6))
-sns.countplot(x="DEATH_EVENT", data=heart_data)
-plt.xlabel("Heart Failure")
-plt.ylabel("Count")
-plt.title("Distribution of Heart Failure Cases")
-st.pyplot()
+heart_failure_counts = heart_data["DEATH_EVENT"].value_counts()
+st.bar_chart(heart_failure_counts)
 
 # Provide information about heart problems
 st.subheader("Understanding Heart Problems")

@@ -3,7 +3,6 @@ from streamlit_option_menu import option_menu
 from diabetes_predict import diabetes_predict
 import pandas as pd
 from heart_disease_data import heart_disease_data
-import matplotlib.pyplot as plt
 from heart_info import heart_info
 
 # page config
