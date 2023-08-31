@@ -2,20 +2,17 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
 
-# Set up Streamlit
-st.title("Heart Failure Prediction and Information")
+# Set up Streamlit page configuration
+st.set_page_config(page_title="Heart Failure Prediction and Information")
 
 # Load the dataset
 heart_data = pd.read_csv("heart.csv")
 
 # Display basic information about the dataset
+st.title("Heart Failure Prediction and Information")
 st.subheader("Heart Failure Dataset Information")
 st.write("This dataset contains clinical records of people and whether they have experienced heart failure.")
-
 st.write("Number of records:", len(heart_data))
 st.write("Number of features:", len(heart_data.columns))
 
