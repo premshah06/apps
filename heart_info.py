@@ -21,8 +21,17 @@ st.dataframe(heart_data.head())
 # Visualize the distribution of heart failure cases
 st.subheader("Heart Failure Cases Distribution")
 heart_failure_counts = heart_data["HeartDisease"].value_counts()
-heart_failure_counts.index = ["No", "Detected"]  # Rename the indices
-st.bar_chart(heart_failure_counts)
+heart_failure_counts.index = ["Not detected", "Detected"]  # Rename the indices
+
+# Adjust the size of the graph
+plt.figure(figsize=(6, 4))
+
+# Create the bar chart
+st.bar_chart(heart_failure_counts, use_container_width=True)
+
+# Customize the y-axis intervals and x-axis labels
+plt.yticks(range(0, max(heart_failure_counts) + 1, 200))
+plt.xticks(rotation=45, ha="right")
 
 # Provide information about heart problems
 st.subheader("Understanding Heart Problems")
