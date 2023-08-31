@@ -17,31 +17,39 @@ def main():
             icons=['house', "file-earmark-medical",'activity'], menu_icon="heart", default_index=0)
 
     if selected == "Home":
-        st.title("Diabetes and Heart Detection Website")
         st.markdown("""
-    <div style="text-align: center; padding: 20px;">
-        <div style="max-width: 100%; border: 2px solid #000; border-radius: 10px; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);">
-            <img src="https://github.com/premshah06/apps/blob/main/heart.jpg" alt="Attractive Image" style="max-width: 100%; border-radius: 10px;">
+        <style>
+            body {
+                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyBfBHN_sugDB6SN9Qx4-5g4wRDf0OppKQKQ&usqp=CAU');
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+            }
+        </style>
+        """, unsafe_allow_html=True)
+
+        st.title("Welcome to our Diabetes and Heart Prediction Website!")
+        st.markdown("""
+        <div style="text-align: center;">
+            <div style="max-width: 100%; border: 2px solid #000; border-radius: 10px; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);">
+                <img src="https://github.com/premshah06/apps/blob/main/heart.jpg" alt="Attractive Image" style="max-width: 100%; border-radius: 10px;">
+            </div>
         </div>
-    </div>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
         st.markdown("""
-    <div style="text-align: center;">
-        <h2>Welcome to our Diabetes and Heart Prediction Website!</h2>
-        <p>In today's world, the prevalence of these conditions has risen significantly, leading to unfortunate outcomes for many individuals. Our mission is to tackle this challenge head-on by empowering you with knowledge about your health.</p>
-    </div>
-    """, unsafe_allow_html=True)
+        <div style="text-align: center;">
+            <p>In today's world, the prevalence of these conditions has risen significantly, leading to unfortunate outcomes for many individuals. Our mission is to tackle this challenge head-on by empowering you with knowledge about your health.</p>
+        </div>
+        """, unsafe_allow_html=True)
 
         st.markdown("""
-    <div style="text-align: center;">
-        <p>We understand that these diseases can be concerning, but worry not. Our user-friendly platform is designed to provide you with a reliable prediction of your health status based on the symptoms you might be experiencing.</p>
-        <p>Instead of wondering and waiting, you can now take a proactive step towards your well-being from the comfort of your home.</p>
-    </div>
-    """, unsafe_allow_html=True)
-        st.markdown(
-            """<style>.css-1aumxhk{background-color: #f0f8ff;}</style>""", unsafe_allow_html=True
-        )  # Apply custom CSS to the background color
+        <div style="text-align: center;">
+            <p>We understand that these diseases can be concerning, but worry not. Our user-friendly platform is designed to provide you with a reliable prediction of your health status based on the symptoms you might be experiencing.</p>
+            <p>Instead of wondering and waiting, you can now take a proactive step towards your well-being from the comfort of your home.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
     elif selected == "Diabetes":
         diabetes_predict()
     elif selected == "Heart Disease":
