@@ -20,7 +20,7 @@ def main():
         st.markdown("""
         <style>
             body {
-                background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyBfBHN_sugDB6SN9Qx4-5g4wRDf0OppKQKQ&usqp=CAU');
+                background-image: url('https://img.freepik.com/free-vector/clean-medical-background_53876-116875.jpg?w=1380&t=st=1693460767~exp=1693461367~hmac=eea2e8d69be09710f80bbc2c1565d64ff38126d54db1f56fbc4a07d0e5d943fe');
                 background-size: cover;
                 background-position: center;
                 height: 100vh;
@@ -38,17 +38,23 @@ def main():
         """, unsafe_allow_html=True)
 
         st.markdown("""
-        <div style="text-align: center;">
-            <p>In today's world, the prevalence of these conditions has risen significantly, leading to unfortunate outcomes for many individuals. Our mission is to tackle this challenge head-on by empowering you with knowledge about your health.</p>
-        </div>
-        """, unsafe_allow_html=True)
+    <div style="text-align: center;">
+        <p style="font-size: 14px; font-weight: bold; text-align: justify;">
+            In today's world, the prevalence of these conditions has risen significantly, leading to unfortunate outcomes for many individuals.
+            Our mission is to tackle this challenge head-on by empowering you with knowledge about your health.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
 
         st.markdown("""
-        <div style="text-align: center;">
-            <p>We understand that these diseases can be concerning, but worry not. Our user-friendly platform is designed to provide you with a reliable prediction of your health status based on the symptoms you might be experiencing.</p>
-            <p>Instead of wondering and waiting, you can now take a proactive step towards your well-being from the comfort of your home.</p>
-        </div>
-        """, unsafe_allow_html=True)
+    <div style="text-align: center;">
+        <p style="font-size: 14px; font-weight: bold; text-align: justify;">
+            We understand that these diseases can be concerning, but worry not. Our user-friendly platform is designed to provide you with a reliable prediction of your health status based on the symptoms you might be experiencing.
+            Instead of wondering and waiting, you can now take a proactive step towards your well-being from the comfort of your home.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+
         
     elif selected == "Diabetes":
         diabetes_predict()
