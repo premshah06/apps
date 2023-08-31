@@ -1,63 +1,119 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
+from sklearn.model_selection import train_test_split
+
+# Function to create a hoverable info box
+def create_info_box(text):
+    st.write('<div class="info-box">' + text + '</div>', unsafe_allow_html=True)
+
+# Add CSS styling
+st.markdown(
+    """
+    <style>
+    .info-box {
+        position: absolute;
+        background-color: #f9f9f9;
+        color: #333;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 12px;
+        max-width: 300px;
+        z-index: 1;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Load the heart disease data
+heart_data = pd.read_csv("heart_disease_data.csv")
 
 def heart_disease_data():
-    # df = pd.read_csv('cardio_train.csv')
-    # st.dataframe(df, use_container_width=True)
-    # age = df['age'].values
-    # # convert age string to int
-    # age = [int(x.split()[0]) for x in age]
-    # st.write(age.min())
-    # st.write(age.max())
-    # age = df['age'].values/365
-    # st.write(age.round())
-    # df.loc[:, 'age'] = age.round()
-    # df.to_csv('cardio_train.csv', index=False)
-    st.title("Heart Disease")
-    # heart_data = pd.read_csv('/content/heart_disease_data.csv')
-    age = st.number_input("Age", min_value=0, max_value=100, value=0)
-    gender= st.selectbox("Sex",  options=['male','female'])
-    if gender=='male':
-        sex=0
-    if gender=='female':
-        sex=1
-    cp= st.number_input("Chest Pain", min_value=0, max_value=4, value=0)
-    trestbps = st.number_input("Resting Blood Pressure", min_value=0, max_value=200, value=0)
-    chol = st.number_input("Serum Cholestoral", min_value=0, max_value=600, value=0)
-    fbs = st.number_input("Fasting Blood Sugar", min_value=0, max_value=1, value=0)
-    restecg = st.number_input("Resting Electrocardiographic Results", min_value=0, max_value=2, value=0)
-    thalach = st.number_input("Maximum Heart Rate Achieved", min_value=0, max_value=200, value=0)
-    exang = st.number_input("Exercise Induced Angina", min_value=0, max_value=1, value=0)
-    oldpeak = st.number_input("ST Depression Induced by Exercise Relative to Rest", min_value=0.0, max_value=6.2, value=0.0)
-    slope = st.number_input("Slope of the Peak Exercise ST Segment", min_value=0, max_value=2, value=0)
-    ca = st.number_input("Number of Major Vessels (0-3) Colored by Flourosopy", min_value=0, max_value=4, value=0)
-    thal = st.number_input("Thalassemia", min_value=0, max_value=3, value=0)
-
-    heart_data = pd.read_csv("heart_disease_data.csv")
-    # st.dataframe(heart_data)
-    X = heart_data.drop(columns = 'target', axis=1)
-    Y = heart_data['target']
-    X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size = 0.2, stratify=Y, random_state=10)
-    model = LogisticRegression()
-    model.fit(X_train, Y_train)
+    st.title("Heart Disease Prediction")
     
-   
-    X_test_prediction = model.predict(X_test)
+    criteria_info = {
+        'Age': 'Enter your age in years.',
+        'Sex': 'Select your gender.',
+        'Chest Pain': 'Choose the type of chest pain you are experiencing.',
+        'Resting Blood Pressure': 'Enter your resting blood pressure.',
+        'Serum Cholestoral': 'Enter your serum cholestoral level.',
+        'Fasting Blood Sugar': 'Select if your fasting blood sugar is above 120 mg/dl.',
+        'Resting Electrocardiographic Results': 'Choose your resting electrocardiographic results.',
+        'Maximum Heart Rate Achieved': 'Enter your maximum heart rate achieved.',
+        'Exercise Induced Angina': 'Select if you have exercise-induced angina.',
+        'ST Depression Induced by Exercise': 'Enter the ST depression induced by exercise relative to rest.',
+        'Slope of the Peak Exercise ST Segment': 'Choose the slope of the peak exercise ST segment.',
+        'Number of Major Vessels': 'Enter the number of major vessels colored by flourosopy.',
+        'Thalassemia': 'Choose your thalassemia category.',
+    }
 
+    st.write(
+        "Fill in the following details to predict whether you have heart disease or not."
+    )
+
+    age = st.number_input("Age", min_value=0, max_value=100, value=0)
+    create_info_box(criteria_info.get('Age', ''))
+
+    gender = st.selectbox("Sex", options=['male', 'female'])
+    create_info_box(criteria_info.get('Sex', ''))
+
+    cp = st.number_input("Chest Pain", min_value=0, max_value=4, value=0)
+    create_info_box(criteria_info.get('Chest Pain', ''))
+
+    trestbps = st.number_input("Resting Blood Pressure", min_value=0, max_value=200, value=0)
+    create_info_box(criteria_info.get('Resting Blood Pressure', ''))
+
+    chol = st.number_input("Serum Cholestoral", min_value=0, max_value=600, value=0)
+    create_info_box(criteria_info.get('Serum Cholestoral', ''))
+
+    fbs = st.number_input("Fasting Blood Sugar", min_value=0, max_value=1, value=0)
+    create_info_box(criteria_info.get('Fasting Blood Sugar', ''))
+
+    restecg = st.number_input("Resting Electrocardiographic Results", min_value=0, max_value=2, value=0)
+    create_info_box(criteria_info.get('Resting Electrocardiographic Results', ''))
+
+    thalach = st.number_input("Maximum Heart Rate Achieved", min_value=0, max_value=200, value=0)
+    create_info_box(criteria_info.get('Maximum Heart Rate Achieved', ''))
+
+    exang = st.number_input("Exercise Induced Angina", min_value=0, max_value=1, value=0)
+    create_info_box(criteria_info.get('Exercise Induced Angina', ''))
+
+    oldpeak = st.number_input("ST Depression Induced by Exercise", min_value=0.0, max_value=6.2, value=0.0)
+    create_info_box(criteria_info.get('ST Depression Induced by Exercise', ''))
+
+    slope = st.number_input("Slope of the Peak Exercise ST Segment", min_value=0, max_value=2, value=0)
+    create_info_box(criteria_info.get('Slope of the Peak Exercise ST Segment', ''))
+
+    ca = st.number_input("Number of Major Vessels", min_value=0, max_value=4, value=0)
+    create_info_box(criteria_info.get('Number of Major Vessels', ''))
+
+    thal = st.number_input("Thalassemia", min_value=0, max_value=3, value=0)
+    create_info_box(criteria_info.get('Thalassemia', ''))
+
+    # Prepare the data for prediction
+    input_data = np.array([age, gender, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]).reshape(1, -1)
+
+    # Load or create the model
+    model = LogisticRegression()
+    X = heart_data.drop(columns='target', axis=1)
+    Y = heart_data['target']
+    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, stratify=Y, random_state=10)
+    model.fit(X_train, Y_train)
+
+    # Make prediction
+    prediction = model.predict(input_data)
+
+    # Display the prediction result
     if st.button("Predict"):
-        input_data = (age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal)
-        input_data_as_numpy_array= np.asarray(input_data)
-
-        input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
-
-        prediction = model.predict(input_data_reshaped)
-        # st.write(prediction)
-        if prediction[0]== 0:
-            st.success('The Person does not have a Heart Disease')
+        if prediction[0] == 0:
+            st.success('The person does not have heart disease.')
             st.balloons()
         else:
-            st.error('The Person has Heart Disease')
+            st.error('The person has heart disease.')
+
+# Call the function to run the app
+if __name__ == "__main__":
+    heart_disease_data()
