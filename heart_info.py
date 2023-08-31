@@ -5,7 +5,7 @@ import seaborn as sns
 
 
 # Load the dataset
-heart_data = pd.read_csv("heart_failure_clinical_records_dataset.csv")
+heart_data = pd.read_csv("heart.csv")
 
 # Display basic information about the dataset
 st.title("Heart Failure Prediction and Information")
