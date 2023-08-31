@@ -37,7 +37,7 @@ def main():
         <p>Instead of wondering and waiting, you can now take a proactive step towards your well-being from the comfort of your home.</p>
     </div>
     """, unsafe_allow_html=True)
-        st.markdown(
+    st.markdown(
             """<style>.css-1aumxhk{background-color: #f0f8ff;}</style>""", unsafe_allow_html=True
         )  # Apply custom CSS to the background color
     elif selected == "Diabetes":
