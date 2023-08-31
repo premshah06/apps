@@ -21,7 +21,7 @@ def main():
         st.markdown("""
         <style>
             body {
-                background-image: url('https://img.freepik.com/free-vector/clean-medical-background_53876-116875.jpg?w=1380&t=st=1693460767~exp=1693461367~hmac=eea2e8d69be09710f80bbc2c1565d64ff38126d54db1f56fbc4a07d0e5d943fe');
+                background-image: url('heart.jpg');
                 background-size: cover;
                 background-position: center;
                 height: 100vh;
