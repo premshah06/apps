@@ -19,10 +19,13 @@ def main():
     if selected == "Home":
         st.title("Diabetes and Heart Detection Website")
         st.markdown("""
-    <div style="text-align: center;">
-        <img src="/heart.jpg" alt="Attractive Image" style="max-width: 100%; border: 2px solid #000; border-radius: 10px; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);">
+    <div style="text-align: center; padding: 20px;">
+        <div style="max-width: 100%; border: 2px solid #000; border-radius: 10px; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);">
+            <img src="heart.jpg" alt="Attractive Image" style="max-width: 100%; border-radius: 10px;">
+        </div>
     </div>
     """, unsafe_allow_html=True)
+
         st.markdown("""
     <div style="text-align: center;">
         <h2>Welcome to our Diabetes and Heart Prediction Website!</h2>
