@@ -21,7 +21,7 @@ def heart_info():
     # Visualize the distribution of heart failure cases
     st.subheader("Heart Failure Cases Distribution")
     heart_failure_counts = heart_data["HeartDisease"].value_counts()
-    heart_failure_counts.index = ["Not detected", "Detected"]  # Rename the indices
+    heart_failure_counts.index = ["No disease", "diagnosed"]  # Rename the indices
     st.bar_chart(heart_failure_counts, use_container_width=True)
 
 

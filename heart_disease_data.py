@@ -54,43 +54,43 @@ def heart_disease_data():
         "Fill in the following details to predict whether you have heart disease or not."
     )
 
-    age = st.number_input("Age", min_value=0, max_value=100, value=0)
+    age = st.number_input("Age", min_value=0, max_value=100, value=0, help=criteria_info.get('Age', ''))
     create_info_box(criteria_info.get('Age', ''))
 
-    gender = st.selectbox("Sex", options=['male', 'female'])
+    gender = st.selectbox("Sex", options=['male', 'female'], help=criteria_info.get('Sex', ''))
     create_info_box(criteria_info.get('Sex', ''))
 
-    cp = st.number_input("Chest Pain", min_value=0, max_value=4, value=0)
+    cp = st.number_input("Chest Pain", min_value=0, max_value=4, value=0, help=criteria_info.get('Chest Pain', ''))
     create_info_box(criteria_info.get('Chest Pain', ''))
 
-    trestbps = st.number_input("Resting Blood Pressure", min_value=0, max_value=200, value=0)
+    trestbps = st.number_input("Resting Blood Pressure", min_value=0, max_value=200, value=0, help=criteria_info.get('Resting Blood Pressure', ''))
     create_info_box(criteria_info.get('Resting Blood Pressure', ''))
 
-    chol = st.number_input("Serum Cholestoral", min_value=0, max_value=600, value=0)
+    chol = st.number_input("Serum Cholestoral", min_value=0, max_value=600, value=0, help=criteria_info.get('Serum Cholestoral', ''))
     create_info_box(criteria_info.get('Serum Cholestoral', ''))
 
-    fbs = st.number_input("Fasting Blood Sugar", min_value=0, max_value=1, value=0)
+    fbs = st.number_input("Fasting Blood Sugar", min_value=0, max_value=1, value=0, help=criteria_info.get('Fasting Blood Sugar', ''))
     create_info_box(criteria_info.get('Fasting Blood Sugar', ''))
 
-    restecg = st.number_input("Resting Electrocardiographic Results", min_value=0, max_value=2, value=0)
+    restecg = st.number_input("Resting Electrocardiographic Results", min_value=0, max_value=2, value=0, help=criteria_info.get('Resting Electrocardiographic Results', ''))
     create_info_box(criteria_info.get('Resting Electrocardiographic Results', ''))
 
-    thalach = st.number_input("Maximum Heart Rate Achieved", min_value=0, max_value=200, value=0)
+    thalach = st.number_input("Maximum Heart Rate Achieved", min_value=0, max_value=200, value=0, help=criteria_info.get('Maximum Heart Rate Achieved', ''))
     create_info_box(criteria_info.get('Maximum Heart Rate Achieved', ''))
 
-    exang = st.number_input("Exercise Induced Angina", min_value=0, max_value=1, value=0)
+    exang = st.number_input("Exercise Induced Angina", min_value=0, max_value=1, value=0, help=criteria_info.get('Exercise Induced Angina', ''))
     create_info_box(criteria_info.get('Exercise Induced Angina', ''))
 
-    oldpeak = st.number_input("ST Depression Induced by Exercise", min_value=0.0, max_value=6.2, value=0.0)
+    oldpeak = st.number_input("ST Depression Induced by Exercise", min_value=0.0, max_value=6.2, value=0.0, help=criteria_info.get('ST Depression Induced by Exercise', ''))
     create_info_box(criteria_info.get('ST Depression Induced by Exercise', ''))
 
-    slope = st.number_input("Slope of the Peak Exercise ST Segment", min_value=0, max_value=2, value=0)
+    slope = st.number_input("Slope of the Peak Exercise ST Segment", min_value=0, max_value=2, value=0, help=criteria_info.get('Slope of the Peak Exercise ST Segment', ''))
     create_info_box(criteria_info.get('Slope of the Peak Exercise ST Segment', ''))
 
-    ca = st.number_input("Number of Major Vessels", min_value=0, max_value=4, value=0)
+    ca = st.number_input("Number of Major Vessels", min_value=0, max_value=4, value=0, help=criteria_info.get('Number of Major Vessels', ''))
     create_info_box(criteria_info.get('Number of Major Vessels', ''))
 
-    thal = st.number_input("Thalassemia", min_value=0, max_value=3, value=0)
+    thal = st.number_input("Thalassemia", min_value=0, max_value=3, value=0, help=criteria_info.get('Thalassemia', ''))
     create_info_box(criteria_info.get('Thalassemia', ''))
 
     # Prepare the data for prediction
