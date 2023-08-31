@@ -20,8 +20,7 @@ def main():
         st.title("Diabetes and Heart Detection Website")
         st.markdown("""
     <div style="text-align: center;">
-        <img src="heart.jpg" alt="Attractive Image" style="max-width: 100%; border: 2px solid #000; border-radius: 10px; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);">
-        <p style="font-style: italic; color: #777;">Image by John Doe</p>
+        <img src="/heart.jpg" alt="Attractive Image" style="max-width: 100%; border: 2px solid #000; border-radius: 10px; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);">
     </div>
     """, unsafe_allow_html=True)
         st.markdown("""
