@@ -14,8 +14,8 @@ st.set_page_config(
 
 def main():
     with st.sidebar:
-        selected = option_menu("Main Menu", ["Home",'Heart Disease',"Heart Problems","Diabetes"],
-            icons=['house', 'activity','person','person'], menu_icon="heart", default_index=0)
+        selected = option_menu("Main Menu", ["Home","Heart Problems","Diabetes"],
+            icons=['house','activity','person'], menu_icon="heart", default_index=0)
 
     if selected == "Home":
         st.markdown("""
@@ -53,8 +53,8 @@ def main():
         
     elif selected == "Diabetes":
        diabetes_predict()
-    elif selected == "Heart Disease":
-        heart_disease_data()
+    #elif selected == "Heart Disease":
+    #    heart_disease_data()
     elif selected == "Heart Problems":
         heart_info()
         
