@@ -51,8 +51,8 @@ def main():
         </div>
         """, unsafe_allow_html=True)
         
-    #elif selected == "Diabetes":
-    #   diabetes_predict()
+    elif selected == "Diabetes":
+       diabetes_predict()
     elif selected == "Heart Disease":
         heart_disease_data()
     elif selected == "Heart Problems":
