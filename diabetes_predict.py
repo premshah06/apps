@@ -6,7 +6,6 @@ from sklearn.model_selection import train_test_split
 from sklearn import svm
 from sklearn.metrics import accuracy_score
 
-
 def diabetes_predict():
     st.title("Diabetes Risk Prediction")
 
@@ -16,58 +15,58 @@ def diabetes_predict():
     diabetes_dataset = diabetes_dataset.dropna(axis=0)
 
     # Create placeholders and selectboxes with hints for user input
-    st.sidebar.header("User Input")
+    st.header("User Input")
 
     # Age
-    Age_select = st.sidebar.selectbox("Age", ['Select', 'Less than 40', '40-49', '50-59', 'Greater than 60'], index=0, help="Select your age group.")
+    Age_select = st.selectbox("Age", ['Select', 'Less than 40', '40-49', '50-59', 'Greater than 60'], index=0, help="Select your age group.")
 
     # Gender
-    Gender_select = st.sidebar.selectbox("Gender", ['Select', 'Male', 'Female'], index=0, help="Select your gender.")
+    Gender_select = st.selectbox("Gender", ['Select', 'Male', 'Female'], index=0, help="Select your gender.")
 
     # Family Diabetes History
-    Family_Diabetes_select = st.sidebar.selectbox("Family Diabetes History", ['Select', 'No', 'Yes'], index=0, help="Does your family have a history of diabetes?")
+    Family_Diabetes_select = st.selectbox("Family Diabetes History", ['Select', 'No', 'Yes'], index=0, help="Does your family have a history of diabetes?")
 
     # High Blood Pressure
-    highBP_select = st.sidebar.selectbox("High Blood Pressure", ['Select', 'No', 'Yes'], index=0, help="Do you have high blood pressure?")
+    highBP_select = st.selectbox("High Blood Pressure", ['Select', 'No', 'Yes'], index=0, help="Do you have high blood pressure?")
 
     # Physical Activity Level
-    PhysicallyActive_select = st.sidebar.selectbox("Physical Activity Level", ['Select', 'Not at all', 'Less than Half hr.', 'More than Half hr.', '1 hr. or more'], index=0, help="Select your physical activity level.")
+    PhysicallyActive_select = st.selectbox("Physical Activity Level", ['Select', 'Not at all', 'Less than Half hr.', 'More than Half hr.', '1 hr. or more'], index=0, help="Select your physical activity level.")
 
     # BMI
-    BMI = st.sidebar.number_input("BMI", min_value=0.0, max_value=100.0, value=0.0, help="Enter your Body Mass Index (BMI).")
+    BMI = st.number_input("BMI", min_value=0.0, max_value=100.0, value=0.0, help="Enter your Body Mass Index (BMI).")
 
     # Smoking
-    Smoking_select = st.sidebar.selectbox("Smoking", ['Select', 'No', 'Yes'], index=0, help="Do you smoke?")
+    Smoking_select = st.selectbox("Smoking", ['Select', 'No', 'Yes'], index=0, help="Do you smoke?")
 
     # Alcohol Consumption
-    Alcohol_select = st.sidebar.selectbox("Alcohol Consumption", ['Select', 'No', 'Yes'], index=0, help="Do you consume alcohol?")
+    Alcohol_select = st.selectbox("Alcohol Consumption", ['Select', 'No', 'Yes'], index=0, help="Do you consume alcohol?")
 
     # Sleep
-    Sleep = st.sidebar.number_input("Sleep (hours)", min_value=0, max_value=12, value=0, help="Enter your daily sleep duration in hours.")
+    Sleep = st.number_input("Sleep (hours)", min_value=0, max_value=12, value=0, help="Enter your daily sleep duration in hours.")
 
     # Sound Sleep
-    SoundSleep = st.sidebar.number_input("Sound Sleep (hours)", min_value=0, max_value=12, value=0, help="Enter your daily sound sleep duration in hours.")
+    SoundSleep = st.number_input("Sound Sleep (hours)", min_value=0, max_value=12, value=0, help="Enter your daily sound sleep duration in hours.")
 
     # Regular Medicine
-    RegularMedicine_select = st.sidebar.selectbox("Regular Medicine", ['Select', 'No', 'Yes'], index=0, help="Do you take regular medication?")
+    RegularMedicine_select = st.selectbox("Regular Medicine", ['Select', 'No', 'Yes'], index=0, help="Do you take regular medication?")
 
     # Junk Food Consumption
-    JunkFood_select = st.sidebar.selectbox("Junk Food Consumption", ['Select', 'Occasional', 'Often', 'Very Often'], index=0, help="How often do you consume junk food?")
+    JunkFood_select = st.selectbox("Junk Food Consumption", ['Select', 'Occasional', 'Often', 'Very Often'], index=0, help="How often do you consume junk food?")
 
     # Stress Level
-    Stress_select = st.sidebar.selectbox("Stress Level", ['Select', 'Not at all', 'Sometimes', 'Very Often', 'Always'], index=0, help="Select your stress level.")
+    Stress_select = st.selectbox("Stress Level", ['Select', 'Not at all', 'Sometimes', 'Very Often', 'Always'], index=0, help="Select your stress level.")
 
     # Blood Pressure Level
-    BPLevel_select = st.sidebar.selectbox("Blood Pressure Level", ['Select', 'Normal', 'Low', 'High'], index=0, help="Select your blood pressure level.")
+    BPLevel_select = st.selectbox("Blood Pressure Level", ['Select', 'Normal', 'Low', 'High'], index=0, help="Select your blood pressure level.")
 
     # Pregnancies
-    Pregancies = st.sidebar.number_input("Pregnancies (0-3)", min_value=0, max_value=3, value=0, help="Enter the number of pregnancies (0-3) for females.")
+    Pregancies = st.number_input("Pregnancies (0-3)", min_value=0, max_value=3, value=0, help="Enter the number of pregnancies (0-3) for females.")
 
     # Urination Frequency
-    UriationFreq_select = st.sidebar.selectbox("Urination Frequency", ['Select', 'Not much', 'Very often'], index=0, help="Select your urination frequency.")
+    UriationFreq_select = st.selectbox("Urination Frequency", ['Select', 'Not much', 'Very often'], index=0, help="Select your urination frequency.")
 
     # Check if the user has provided all inputs
-    if st.sidebar.button("Predict"):
+    if st.button("Predict"):
         if (
             Age_select == 'Select' or
             Gender_select == 'Select' or
