@@ -121,3 +121,6 @@ def diabetes_predict():
                 st.balloons()
             else:
                 st.error("You are diabetic.")
+
+if __name__ == "__main__":
+    diabetes_predict()
