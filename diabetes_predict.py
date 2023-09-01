@@ -15,7 +15,6 @@ def diabetes_predict():
     diabetes_dataset = diabetes_dataset.dropna(axis=0)
 
     # Create placeholders and selectboxes with hints for user input
-    st.header("User Input")
 
     # Age
     Age_select = st.selectbox("Age", ['Select', 'Less than 40', '40-49', '50-59', 'Greater than 60'], index=0, help="Select your age group.")
