@@ -15,7 +15,7 @@ st.set_page_config(
 def main():
     with st.sidebar:
         selected = option_menu("Main Menu", ["Home","Heart Problems","Heart Disease","Diabetes"],
-            icons=['house','activity','medicine','person'], menu_icon="heart", default_index=0)
+            icons=['house','activity','heart','person'], menu_icon="heart", default_index=0)
 
     if selected == "Home":
         st.markdown("""
