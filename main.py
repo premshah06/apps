@@ -53,8 +53,8 @@ def main():
         
     elif selected == "Diabetes":
        diabetes_predict()
-    #elif selected == "Heart Disease":
-    #    heart_disease_data()
+    elif selected == "Heart Disease":
+        heart_disease_data()
     elif selected == "Heart Problems":
         heart_info()
         

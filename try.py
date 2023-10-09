@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
 # Load the dataset into a Pandas DataFrame
-data = pd.read_csv('apps\dataset\diabetes-dataset.csv')
+data = pd.read_csv('diabetes-dataset-Cleaned.csv')
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(data.drop('Diabetic', axis=1), data['Diabetic'], test_size=0.1, random_state=42)
